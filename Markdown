@@ -12,7 +12,7 @@ This goal of this project was to create an affordable and expandable home networ
 - - -
 ###Diagram
 
-<p align="center"><img src="http://i.imgur.com/7VIPh6O.png" alt="Drawing" style="width: 800px;"/></p>
+<p align="center"><img src="http://i.imgur.com/7VIPh6O.png" alt="Drawing" style="width: 700px;"/></p>
 
 ####Components
 #####Client
@@ -45,6 +45,7 @@ Written in C# in visual studio, the desktop application operates in the same way
 ###Light Module
 ####Design
 
+<p align="center"><img src="http://i.imgur.com/KZJO7HZ.png" alt="Drawing" style="width: 500px;"/></p>
 
 ####PCB
 
@@ -54,7 +55,7 @@ Written in C# in visual studio, the desktop application operates in the same way
 #####Description
 This mode is a part of the light module which responds to music, here i will go over howthe input signal is generated and processed.
 
-#####Circuit Diagram
+#####Circuit
 There are five main components to the Light module. 
 
 +   Control System
