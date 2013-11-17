@@ -11,6 +11,9 @@ This goal of this project was to create an affordable and expandable home networ
 
 - - -
 ###Diagram
+
+<p align="center"><img src="http://i.imgur.com/7VIPh6O.png" alt="Drawing" style="width: 800px;"/></p>
+
 ####Components
 #####Client
 
@@ -31,7 +34,7 @@ The light module consists of RGB LEDs which recieves commands via the 418MHz net
 <img src="http://i.imgur.com/T7TJgyy.png" alt="Drawing" style="width: 300px;"/>
 <img src="http://i.imgur.com/WtuYH2U.png" alt="Drawing" style="width: 300px;"/></p>
 
-This is the Android application I wrote to control the light modules from my phone. With this application I can control all aspects of the module in addition to the 4 channels of the RF AC relays. To communicate with the sever it must be connected to the wifi network that the server is on however I am working on a secure way to control the lights from anywhere so that I can control systems when i'm away.
+This is the Android application I wrote to control the light modules from my phone. With this application i can control all aspects of the module in addition to the 4 channels of the RF AC relays. To communicate with the sever it must be connected to the wifi network that the server is on however I am working on a secure way to control the lights from anywhere so that i can control systems when i'm away.
 
 ####Desktop Application
 <p align="center">![DesktopApp](http://i.imgur.com/YgeQw6P.png)</p>
@@ -49,7 +52,7 @@ Written in C# in visual studio, the desktop application operates in the same way
 
 ####Audio Mode and Signal Analysis
 #####Description
-This mode is a part of the light module which responds to music, here I will go over howthe input signal is generated and processed.
+This mode is a part of the light module which responds to music, here i will go over howthe input signal is generated and processed.
 
 #####Circuit Diagram
 There are five main components to the Light module. 
@@ -60,7 +63,7 @@ There are five main components to the Light module.
 +   Communication
 +   Analog audio processing circuit
 
-The control system I use is an ATMega238 which ties all the components together. The power supply for this circuit I use a 9V supply into a 5V regulator for logic. The LEDs I use are two 3W RGB LEDs in series. Each diode is 1W and there are 3 individual LEDs in each package. As for communication I use the RX module of a 418MHz RF link to recieve messages from the server. The analog circuit consists of a BJT preamplifier in a common emitter configuration which provides around 40dB of amplification. This is not enough by itself however so I then cascade that into an LM386 amplifier in a configuration providing another 20dB of amplification which puts the voltage into a range easily readable for the ADC on the microcontroller.
+The control system i use is an ATMega238 which ties all the components together. The power supply for this circuit i use a 9V supply into a 5V regulator for logic. The LEDs i use are two 3W RGB LEDs in series. Each diode is 1W and there are 3 individual LEDs in each package. As for communication i use the RX module of a 418MHz RF link to recieve messages from the server. The analog circuit consists of a BJT preamplifier in a common emitter configuration which provides around 40dB of amplification. This is not enough by itself however so i then cascade that into an LM386 amplifier in a configuration providing another 20dB of amplification which puts the voltage into a range easily readable for the ADC on the microcontroller.
 
 #####Frequency Response
 
