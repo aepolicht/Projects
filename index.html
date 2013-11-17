@@ -61,12 +61,49 @@
 
 
 <h1 id="mobonet-a-home-automation-experiment">moboNet: A Home Automation Experiment</h1>
+<div class="toc">
+<ul>
+<li><a href="#mobonet-a-home-automation-experiment">moboNet: A Home Automation Experiment</a><ul>
+<li><a href="#description">Description</a></li>
+<li><a href="#video-1">Video (#1)</a></li>
+<li><a href="#diagram">Diagram</a><ul>
+<li><a href="#components">Components</a><ul>
+<li><a href="#client">Client</a></li>
+<li><a href="#server">Server</a></li>
+<li><a href="#light-modules">Light Modules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#control">Control</a><ul>
+<li><a href="#android-application">Android Application</a></li>
+<li><a href="#desktop-application">Desktop Application</a></li>
+</ul>
+</li>
+<li><a href="#light-module">Light Module</a><ul>
+<li><a href="#design">Design</a></li>
+<li><a href="#pcb">PCB</a></li>
+<li><a href="#audio-mode-and-signal-analysis">Audio Mode and Signal Analysis</a><ul>
+<li><a href="#description_1">Description</a></li>
+<li><a href="#circuit">Circuit</a></li>
+<li><a href="#frequency-response">Frequency Response</a></li>
+<li><a href="#digital-sampling-and-filtering">Digital Sampling and Filtering</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#next-on-the-list">Next on the List</a></li>
+</ul>
+</li>
+</ul>
+</div>
 <hr />
 <h3 id="description">Description</h3>
 <p>This goal of this project was to create an affordable and expandable home network system and along the way learn Java, C#, Matlab, OrCAD, and PSpice. </p>
 <hr />
-<h3 id="video">Video</h3>
-<p><p align="center"><iframe width="640" height="360" src="//www.youtube.com/embed/LThQ7OVa-BA" frameborder="0" allowfullscreen></iframe></p></p>
+<h3 id="video-1">Video</h3>
+<p><p align="center"><iframe width="640" height="360" src="//www.youtube.com/embed/LThQ7OVa-BA" frameborder="0" allowfullscreen></iframe></p>
+<small></p>
 <hr />
 <h3 id="diagram">Diagram</h3>
 <p align="center"><img src="http://i.imgur.com/7VIPh6O.png" alt="Drawing" style="width: 700px;"/></p>
@@ -75,16 +112,17 @@
 <h5 id="client">Client</h5>
 <p>The clients consist of any device with the means of sending commands to the server module. This means Android application, Desktop application in addition to the door knocker module which sends notifications over the 315MHz network.</p>
 <h5 id="server">Server</h5>
-<p>The server module is an arduino uno with an ethernet shield which transfers data from LAN to a 418MHz network. I designed a relatively simple communication protocol for the RF links to provide reliable communication from server to light module. </p>
+<p>The server module is an arduino uno with an Ethernet shield which transfers data from LAN to a 418MHz network. I designed a relatively simple communication protocol for the RF links to provide reliable communication from server to light module. </p>
 <h5 id="light-modules">Light Modules</h5>
-<p>The light module consists of RGB LEDs which recieves commands via the 418MHz network. The might module is what sits under the cube in the video and will eventually be equiped to be screwed into a standard light bulb socket.</p>
+<p>The light module consists of RGB LEDs which receives commands via the 418MHz network. The might module is what sits under the cube in the video and will eventually be equipped to be screwed into a standard light bulb socket.</p>
 <hr />
 <h3 id="control">Control</h3>
 <h4 id="android-application">Android Application</h4>
 <p><p align="center"><img src="http://i.imgur.com/ecZfp9x.png" alt="Drawing" style="width: 300px;"/>
 <img src="http://i.imgur.com/T7TJgyy.png" alt="Drawing" style="width: 300px;"/>
-<img src="http://i.imgur.com/WtuYH2U.png" alt="Drawing" style="width: 300px;"/></p></p>
-<p>This is the Android application I wrote to control the light modules from my phone. With this application i can control all aspects of the module in addition to the 4 channels of the RF AC relays. To communicate with the sever it must be connected to the wifi network that the server is on however I am working on a secure way to control the lights from anywhere so that i can control systems when i'm away.</p>
+<img src="http://i.imgur.com/WtuYH2U.png" alt="Drawing" style="width: 300px;"/>
+</p></p>
+<p>This is the Android application I wrote to control the light modules from my phone. With this application i can control all aspects of the module in addition to the 4 channels of the RF AC relays. To communicate with the sever it must be connected to the wifi network that the server is on however I am working on a secure way to control the lights from anywhere so that i can control systems when I'm away.</p>
 <h4 id="desktop-application">Desktop Application</h4>
 <p><p align="center"><img alt="DesktopApp" src="http://i.imgur.com/YgeQw6P.png" /></p></p>
 <p>Written in C# in visual studio, the desktop application operates in the same way as the Android application, by sending UDP packets to the server on the network. </p>
@@ -98,7 +136,7 @@
 
 <h4 id="audio-mode-and-signal-analysis">Audio Mode and Signal Analysis</h4>
 <h5 id="description_1">Description</h5>
-<p>This mode is a part of the light module which responds to music, here i will go over howthe input signal is generated and processed.</p>
+<p>This mode is a part of the light module which responds to music, here i will go over how the input signal is generated and processed.</p>
 <h5 id="circuit">Circuit</h5>
 <p>There are five main components to the Light module. </p>
 <ul>
@@ -108,13 +146,20 @@
 <li>Communication</li>
 <li>Analog audio processing circuit</li>
 </ul>
-<p>The control system i use is an ATMega238 which ties all the components together. The power supply for this circuit i use a 9V supply into a 5V regulator for logic. The LEDs i use are two 3W RGB LEDs in series. Each diode is 1W and there are 3 individual LEDs in each package. As for communication i use the RX module of a 418MHz RF link to recieve messages from the server. The analog circuit consists of a BJT preamplifier in a common emitter configuration which provides around 40dB of amplification. This is not enough by itself however so i then cascade that into an LM386 amplifier in a configuration providing another 20dB of amplification which puts the voltage into a range easily readable for the ADC on the microcontroller.</p>
+<p>The control system i use is an ATMega238 which ties all the components together. The power supply for this circuit i use a 9V supply into a 5V regulator for logic. The LEDs i use are two 3W RGB LEDs in series. Each diode is 1W and there are 3 individual LEDs in each package. As for communication i use the RX module of a 418MHz RF link to receive messages from the server. The analog circuit consists of a BJT preamplifier in a common emitter configuration which provides around 40dB of amplification. This is not enough by itself however so i then cascade that into an LM386 amplifier in a configuration providing another 20dB of amplification which puts the voltage into a range easily readable for the ADC on the microcontroller.</p>
 <h5 id="frequency-response">Frequency Response</h5>
 <p align="center"><img src="http://i.imgur.com/iS6kP5U.png" alt="Drawing" style="width: 900px;"/></p>
 
 <p>Here are the stages of the analog frequency response. It is generated from the circuit model in PSpice by performing an AC frequency sweep from 1Hz to 1MHz.</p>
 <h5 id="digital-sampling-and-filtering">Digital Sampling and Filtering</h5>
-<p>After the signal is amplified and filtered, it is then sampled at 20Khz. Further processing is then done through digital filtering. I am using a 30th order FIR filter. This method doesnt provide continuous digital signal but rather a burst of 31 samples every time the audio processing loop is entered. I have found that with the limited processing speed of the ATMEGA328, it is best to sample in this method rather than is interrupt based.</p>
+<p>After the signal is amplified and filtered, it is then sampled at 20Khz. Further processing is then done through digital filtering. I am using a 30th order FIR filter. This method doesn't provide continuous digital signal but rather a burst of 31 samples every time the audio processing loop is entered. I have found that with the limited processing speed of the ATMEGA328, it is best to sample in this method rather than is interrupt based. Currently there are only two channels, 0-150Hz and 1KHz-10KHz. I hope to push this to more resolution in the future so i can design a music algorithm with more complexity while still staying within a 60Hz loop frequency. When the computations begin to take longer than ~20mS there becomes noticeable jitter. I may yet be able to compensate for this if i need to when adding more channels.</p>
+<hr />
+<h3 id="next-on-the-list">Next on the List</h3>
+<ul>
+<li>Scale to incorporate more light module nodes and add controllability for clients</li>
+<li>Send PCB to board house</li>
+<li>Audio Algorithm v.2</li>
+</ul>
 
 
           </article>
