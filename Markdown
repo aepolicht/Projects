@@ -1,5 +1,5 @@
 #moboNet: A Home Automation Experiment
-[TOC]
+
 - - -
 ###Description
 
@@ -55,9 +55,11 @@ Written in C# in visual studio, the desktop application operates in the same way
 
 ####Audio Mode and Signal Analysis
 #####Description
+
 This mode is a part of the light module which responds to music, here i will go over how the input signal is generated and processed.
 
 #####Circuit
+
 There are five main components to the Light module. 
 
 +   Control System
