@@ -84,5 +84,8 @@ After the signal is amplified and filtered, it is then sampled at 20Khz. Further
 ###Next on the List
 
 +   Scale to incorporate more light module nodes and add controllability for clients
-+   Send PCB to board house
++   Redo PCB to reflect hardware changes
 +   Audio Algorithm v.2
+
+- - -
+###[Development Log]("../page2.html")
