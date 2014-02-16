@@ -85,7 +85,7 @@ After the signal is amplified and filtered, it is then sampled at 20Khz. Further
 
 +   Scale to incorporate more light module nodes and add controllability for clients
 +   Redo PCB to reflect hardware changes
-+   Audio Algorithm v.2
++   Audio Algorithm v.2 based on DFT matrix
 
 - - -
 ###[Development Log]("../page2.html")
